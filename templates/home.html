@@ -2,17 +2,45 @@
 <html>
   <head>
     <title>Lanky Munters Euro 2024 Sweep Stake</title>
-    <style>
-      h3 {
-        
-      }
-    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
   </head>
-  <body>
-    <h2>Lanky Munters Euro 2024 Sweep Stake</h2>
-    <img src="static/euro2024headerbanner.jpeg" width="100%">
-    <h3>Current Leader is </h3>
-    <h3>Next Match</h3>
-    <h3>This is the current table for the sweep stake</h3>
+  <body style="background-color:powderblue;">
+    <div class="container-fluid">
+      <h2 style="text-align:center;">Lanky Munters Euro 2024 Sweep Stake</h2>
+      <img src="static/euro2024headerbanner.jpeg" width="100%">
+    <div class ="container-fluid">
+      <h3 style="text-align:center;">Current Leader is </h3>
+      {% for user in users %}
+        {% if user['position'] == 1 %}
+        <h4>{{user['name']}}, {{user['points']}} Points </h4>
+        {%  endif %}
+      {% endfor %}
+    </div>
+    <div class="container-fluid">
+      <h3 style="text-align:center;">Next Match</h3>
+      <p1>Example</p1>
+    </div>
+    <div class="container-fluid">
+      <h3 style="text-align:center;">Table</h3>
+      <table class="table table-hover">
+        {{users}}
+      </table>
+    </div>
+    <div class="container-fluid">
+      <h3 style="text-align:center;">Teams</h3>
+      <div>
+          {% for user in users %}
+            <div class="row">
+              <h4>{{user['name']}}</h4>
+              <div>
+              {{user['tier1']}}, {{user['tier2']}},     {{user['tier3']}}, {{user['tier4']}}
+              </div>
+            </div>
+          {% endfor %}
+      </div>
+    </div>
   </body>
 </html>
