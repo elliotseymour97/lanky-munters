@@ -10,37 +10,52 @@
   <body style="background-color:powderblue;">
     <div class="container-fluid">
       <h2 style="text-align:center;">Lanky Munters Euro 2024 Sweep Stake</h2>
-      <img src="static/euro2024headerbanner.jpeg" width="100%">
-    <div class ="container-fluid">
-      <h3 style="text-align:center;">Current Leader is </h3>
-      {% for user in users %}
-        {% if user['position'] == 1 %}
-        <h4>{{user['name']}}, {{user['points']}} Points </h4>
-        {%  endif %}
-      {% endfor %}
+      <img class="img-fluid"src="static/euro2024headerbanner.jpeg" width="100%">
     </div>
-    <div class="container-fluid">
-      <h3 style="text-align:center;">Next Match</h3>
-      <p1>Example</p1>
-    </div>
-    <div class="container-fluid">
-      <h3 style="text-align:center;">Table</h3>
-      <table class="table table-hover">
-        {{users}}
-      </table>
-    </div>
-    <div class="container-fluid">
-      <h3 style="text-align:center;">Teams</h3>
-      <div>
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+        Players</a>
+          </h4>
+        </div>
+      <div id="collapse1" class="panel-collapse collapse in">
+        <div class="panel-body">
           {% for user in users %}
-            <div class="row">
-              <h4>{{user['name']}}</h4>
-              <div>
-              {{user['tier1']}}, {{user['tier2']}},     {{user['tier3']}}, {{user['tier4']}}
-              </div>
-            </div>
+            <div>{{user['name']}}: {{user['tier1']}}, {{user['tier2']}}, {{user['tier3']}}, {{user['tier4']}}</div>
           {% endfor %}
+        </div>
       </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+           <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+        Full Table</a>
+          </h4>
+        </div>
+      <div id="collapse2" class="panel-collapse collapse">
+        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.</div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+        Previous Results</a>
+      </h4>
     </div>
+    <div id="collapse3" class="panel-collapse collapse">
+      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.</div>
+    </div>
+  </div>
+</div>
+    
   </body>
 </html>
